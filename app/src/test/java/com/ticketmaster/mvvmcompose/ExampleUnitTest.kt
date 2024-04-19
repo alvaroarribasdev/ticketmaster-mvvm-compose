@@ -1,4 +1,4 @@
-package com.ticketmaster.app
+package com.ticketmaster.mvvmcompose
 
 import org.junit.Test
 

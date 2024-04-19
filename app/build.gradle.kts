@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.ticketmaster.app"
+    namespace = "com.ticketmaster.mvvmcompose"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.ticketmaster.app"
+        applicationId = "com.ticketmaster.mvvmcompose"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

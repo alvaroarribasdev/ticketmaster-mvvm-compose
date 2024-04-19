@@ -1,4 +1,4 @@
-package com.ticketmaster.app.ui.theme
+package com.ticketmaster.mvvmcompose.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
