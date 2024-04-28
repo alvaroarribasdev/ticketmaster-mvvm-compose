@@ -1,7 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("com.google.devtools.ksp") version "1.9.22-1.0.17"
+    id("com.google.devtools.ksp") version "1.9.23-1.0.20"
     kotlin("kapt") version "1.9.23"
 }
 
@@ -29,6 +29,12 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
+            buildConfigField("String", "API_KEY", "\"yCjBKGM28CvtiXOzqGnCfkpDUOOa2GJ1\"")
+        }
+
+        debug {
+            buildConfigField("String", "API_KEY", "\"yCjBKGM28CvtiXOzqGnCfkpDUOOa2GJ1\"")
         }
     }
     compileOptions {
@@ -40,9 +46,10 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.12"
     }
     packaging {
         resources {
@@ -61,10 +68,11 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+    runtimeOnly("com.google.android.material:material:1.11.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
+    androidTestImplementation(platform("androidx.compose:compose-bom:2024.04.01"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
@@ -74,8 +82,9 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-extensions:$lifecycle_version")
 
     // Compose Destinations
-    val destinations_version = "1.9.63"
+    val destinations_version = "2.1.0-beta01"
     implementation("io.github.raamcosta.compose-destinations:core:$destinations_version")
+    implementation("io.github.raamcosta.compose-destinations:bottom-sheet:$destinations_version")
     ksp ("io.github.raamcosta.compose-destinations:ksp:$destinations_version")
 
     // Room
@@ -92,25 +101,36 @@ dependencies {
     implementation(platform("com.squareup.okhttp3:okhttp-bom:4.12.0"))
     implementation("com.squareup.okhttp3:okhttp")
     implementation("com.squareup.okhttp3:logging-interceptor")
+    implementation("com.squareup.retrofit2:converter-moshi:2.11.0")
 
     // Hilt
     val hilt_version = "2.51.1"
     implementation ("com.google.dagger:hilt-android:$hilt_version")
     kapt ("com.google.dagger:hilt-compiler:$hilt_version")
 
-    // Glide
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    // Coil
+    val coil_version = "2.6.0"
+    implementation("io.coil-kt:coil:$coil_version")
+    implementation("io.coil-kt:coil-compose:$coil_version")
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
+
+    // Moshi
+    ksp("com.squareup.moshi:moshi-kotlin-codegen:1.15.1")
+    implementation("com.squareup.moshi:moshi:1.15.1")
+
+    // Paging 3
+    val paging_version = "3.2.1"
+    implementation("androidx.paging:paging-runtime-ktx:$paging_version")
+    implementation("androidx.paging:paging-compose:3.3.0-beta01")
+
 
     // Navigation Component
     val nav_version = "2.7.7"
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
     implementation("androidx.navigation:navigation-compose:$nav_version")
-
-
 
 }
 
