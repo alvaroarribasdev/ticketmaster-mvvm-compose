@@ -5,5 +5,5 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class SafeTix(
-    @Json(name = "enabled") val enabled: Boolean,
+    @Json(name = "enabled") val enabled: Boolean?,
 )

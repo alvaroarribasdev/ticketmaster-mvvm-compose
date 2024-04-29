@@ -64,7 +64,7 @@ fun TicketmasterAPITheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = WorkSansTypography,
         content = content
     )
 }

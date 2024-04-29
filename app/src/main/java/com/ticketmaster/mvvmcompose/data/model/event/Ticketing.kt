@@ -5,7 +5,7 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Ticketing(
-    @Json(name = "allInclusivePricing") val allInclusivePricing: AllInclusivePricing,
+    @Json(name = "allInclusivePricing") val allInclusivePricing: AllInclusivePricing?,
     @Json(name = "id") val id: String?,
     @Json(name = "safeTix") val safeTix: SafeTix?,
 )

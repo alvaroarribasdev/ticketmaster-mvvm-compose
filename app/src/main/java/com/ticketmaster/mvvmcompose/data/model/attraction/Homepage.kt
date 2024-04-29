@@ -5,5 +5,5 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Homepage(
-    @Json(name = "url") val url: String,
+    @Json(name = "url") val url: String?,
 )

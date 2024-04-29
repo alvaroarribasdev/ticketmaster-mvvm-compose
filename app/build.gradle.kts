@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp") version "1.9.23-1.0.20"
     kotlin("kapt") version "1.9.23"
 }
@@ -106,6 +107,7 @@ dependencies {
     // Hilt
     val hilt_version = "2.51.1"
     implementation ("com.google.dagger:hilt-android:$hilt_version")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.2.0")
     kapt ("com.google.dagger:hilt-compiler:$hilt_version")
 
     // Coil

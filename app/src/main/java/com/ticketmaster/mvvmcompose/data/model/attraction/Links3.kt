@@ -5,5 +5,5 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Links3(
-    @Json(name = "self") val self: Self3,
+    @Json(name = "self") val self: Self3?,
 )

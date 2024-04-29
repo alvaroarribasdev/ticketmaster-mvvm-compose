@@ -7,6 +7,6 @@ import com.ticketmaster.mvvmcompose.data.model.venue.Venue
 
 @JsonClass(generateAdapter = true)
 data class Embedded2(
-    @Json(name = "venues") val venues: List<Venue>,
+    @Json(name = "venues") val venues: List<Venue>?,
     @Json(name = "attractions") val attractions: List<Attraction>?,
 )

@@ -5,5 +5,5 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class AllInclusivePricing(
-    @Json(name = "enabled") val enabled: Boolean,
+    @Json(name = "enabled") val enabled: Boolean?,
 )

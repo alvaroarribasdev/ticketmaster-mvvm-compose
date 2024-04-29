@@ -5,6 +5,6 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class TicketLimit(
-    @Json(name = "info") val info: String,
+    @Json(name = "info") val info: String?,
     @Json(name = "id") val id: String?,
 )

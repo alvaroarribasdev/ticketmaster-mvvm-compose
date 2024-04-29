@@ -5,5 +5,5 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class First(
-    @Json(name = "href") val href: String,
+    @Json(name = "href") val href: String?,
 )

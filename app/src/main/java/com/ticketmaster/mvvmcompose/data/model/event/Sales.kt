@@ -5,5 +5,5 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Sales(
-    @Json(name = "public") val public: Public,
+    @Json(name = "public") val public: Public?,
 )

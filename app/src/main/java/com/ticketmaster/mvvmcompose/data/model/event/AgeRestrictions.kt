@@ -5,6 +5,6 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class AgeRestrictions(
-    @Json(name = "legalAgeEnforced") val legalAgeEnforced: Boolean,
+    @Json(name = "legalAgeEnforced") val legalAgeEnforced: Boolean?,
     @Json(name = "id") val id: String?,
 )

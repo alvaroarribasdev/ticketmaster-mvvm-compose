@@ -28,6 +28,8 @@ object NetworkModule {
     @Singleton
     fun provideBaseUrl(): String = BASE_URL
 
+    @Provides
+    @Singleton
     fun provideHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor { chain ->
